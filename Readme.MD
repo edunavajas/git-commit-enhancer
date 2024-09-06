@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-      <img src="https://github.com/edunavajas/git-commit-enhancer/img/header.png" alt="Project Header">
+      <img src="https://raw.githubusercontent.com/edunavajas/git-commit-enhancer/main/img/header.png" alt="Project Header">
   <br />
  </div>
 
