@@ -4,24 +4,146 @@
   <br />
  </div>
 
+ # 📋 <a name="table">Table of Contents</a>
 
-# Automated Git Commit Hook with Gemini Integration
+1. 🤖 [Introduction](#introduction)
+2. ⚙️ [Dependencies installation](#dependenciesk)
+3. 🦾 [Project setup](#setup)
+4. 🤸 [Quick Start](#quick-start)
+5. 🕸️ [Snippets](#snippets)
+6. 🔗 [Links](#links)
+7. 🚀 [More](#more)
+
+
+# <a name="introduction">🤖 Automated Git Commit Hook with Gemini Integration</a>
+
+> ⚠️ **Warning**: This project is currently configured for macOS only.
 
 This project provides an automated Git hook that improves every commit message using Gemini AI. It automatically updates your commit messages before they are applied to the repository. The script requires a Gemini API key, which you need to store in a `.env` file as an environment variable named `GEMINI_API_KEY`.
 
-## Setup
+# <a name="dependencies">⚙️ Dependencies</a>
+
+## Atomatic installation
+
+
+To automatically set up pyhton env and dependencies run this script:
+
+```bash
+chmod +x dependencies.sh
+./ependencies.sh
+```
+
+## Manual installation
+
+This guide walks you through the manual steps required to set up a Python environment on macOS using `pyenv`, install Python version 3.12.5, create a virtual environment, and install the `google-generativeai` package.
+
+### Prerequisites 
+
+Make sure you have the following installed:
+- **Homebrew** (If not, follow the instructions in Step 1)
+- **pyenv**
+
+### Steps
+
+1. Install Homebrew (if not installed)
+
+Homebrew is required to install pyenv. To check if Homebrew is installed, open a terminal and run:
+
+```bash
+brew --version
+```
+
+If Homebrew is not installed, you can install it by running the following command in your terminal:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+2. Install pyenv
+
+Check if pyenv is installed by running:
+
+```bash
+pyenv --version
+```
+
+If pyenv is not installed, install it using Homebrew:
+
+```bash
+brew update
+brew install pyenv
+```
+
+3. Configure pyenv
+
+To ensure pyenv works properly, you need to add it to your shell’s environment variables. Add the following lines to your ~/.bash_profile (or ~/.zshrc if you’re using Zsh):
+
+```bash
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+```
+
+After adding these lines, apply the changes by running:
+
+```bash
+source ~/.bash_profile  # or ~/.zshrc for Zsh users
+```
+
+4. Install Python 3.12.5 (current newer version)
+
+Now that pyenv is set up, you can install the specific version of Python (3.12.5 in this case) by running:
+```bash
+pyenv install 3.12.5
+```
+
+5. Set Python 3.12.5 as the Global Version
+```bash
+pyenv global 3.12.5
+```
+
+6. Create a Virtual Environment
+
+With Python 3.12.5 installed, create a virtual environment (in this example, we’ll call it myenv):
+```bash
+pyenv virtualenv 3.12.5 myenv
+```
+
+7. Activate the Virtual Environment
+```bash
+pyenv activate myenv
+```
+
+8. Install the google-generativeai Package
+```bash
+pip install google-generativeai
+```
+
+You now have a Python 3.12.5 virtual environment with the google-generativeai package installed. To deactivate the environment at any point, run:
+
+```bash
+pyenv deactivate
+```
+For future use, you can reactivate the environment by running:
+
+```bash
+pyenv activate myenv
+```
+
+
+# <a name="setup">🦾  Project setup</a>
 
 To use this hook, follow the steps below.
 
-### Prerequisites
+## Prerequisites
 
-1. You need to have Python installed on your system.
+1. You need to have Python installed on your system. (See ⚙️ [Dependencies installation](#dependenciesk))
 2. You must have an API key for Gemini AI. Store this key in a `.env` file located in the root directory of the project:
     ```
     GEMINI_API_KEY=your_gemini_api_key_here
     ```
 
-### Automatic Setup
+## Automatic Setup
 
 To automatically set up the hook for your Git repositories, clone the project and run the following commands:
 
@@ -32,7 +154,7 @@ chmod +x setup_hooks.py
 
 The script will ask you where your Git projects are located. It will then configure the Git hooks for all the projects in that directory. Any new repositories you clone will have the hook applied automatically.
 
-### Manual Setup
+## Manual Setup
 
 If you prefer to set up the hook manually, follow these steps:
 
@@ -103,7 +225,3 @@ git commit -m "your commit message"
 ```
 
 Gemini will process the commit message, improve it, and apply the changes to the commit automatically.
-
-### Notes
-Make sure the .env file with your GEMINI_API_KEY is present in the root directory of the project before running the hook.
-You can manually run the Python script Main.py if needed to test or debug any issues with commit messages.
