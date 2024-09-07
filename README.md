@@ -9,10 +9,6 @@
 1. 🤖 [Introduction](#introduction)
 2. ⚙️ [Dependencies installation](#dependenciesk)
 3. 🦾 [Project setup](#setup)
-4. 🤸 [Quick Start](#quick-start)
-5. 🕸️ [Snippets](#snippets)
-6. 🔗 [Links](#links)
-7. 🚀 [More](#more)
 
 
 # <a name="introduction">🤖 Automated Git Commit Hook with Gemini Integration</a>
@@ -32,6 +28,7 @@ To automatically set up pyhton env and dependencies run this script:
 chmod +x dependencies.sh
 ./ependencies.sh
 ```
+Now you can go 👉 (🦾 [Project setup](#setup))
 
 ## Manual installation
 
