@@ -26,7 +26,7 @@ To automatically set up pyhton env and dependencies run this script:
 
 ```bash
 chmod +x dependencies.sh
-./ependencies.sh
+./dependencies.sh
 ```
 Now you can go 👉 (🦾 [Project setup](#setup))
 
