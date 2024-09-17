@@ -7,30 +7,32 @@
  # 📋 <a name="table">Table of Contents</a>
 
 1. 🤖 [Introduction](#introduction)
-2. ⚙️ [Dependencies installation](#dependenciesk)
+2. ⚙️ [Dependencies installation for Mac Os](#dependencies)
+3  ⚙️ [Dependencies installation for Linux](#dependencies-linux)
+3  ⚙️ [Dependencies installation for Windows](#dependencies-windows)
 3. 🦾 [Project setup](#setup)
 
 
 # <a name="introduction">🤖 Automated Git Commit Hook with Gemini Integration</a>
 
-> ⚠️ **Warning**: This project is currently configured for macOS only.
+> ⚠️ **Warning**: This project is primarily configured for macOS. However, configurations have been adapted for Linux and Windows. If you encounter any issues or errors, feel free to report them in the issues section or submit a pull request.
 
 This project provides an automated Git hook that improves every commit message using Gemini AI. It automatically updates your commit messages before they are applied to the repository. The script requires a Gemini API key, which you need to store in a `.env` file as an environment variable named `GEMINI_API_KEY`.
 
-# <a name="dependencies">⚙️ Dependencies</a>
+# <a name="dependencies">⚙️ Dependencies MacOs</a>
 
-## Atomatic installation
+## Atomatic installation for MacOs
 
 
 To automatically set up pyhton env and dependencies run this script:
 
 ```bash
-chmod +x dependencies.sh
-./dependencies.sh
+chmod +x dependencies-macos.sh
+./dependencies-macos.sh
 ```
 Now you can go 👉 (🦾 [Project setup](#setup))
 
-## Manual installation
+## Manual installation for MacOs
 
 This guide walks you through the manual steps required to set up a Python environment on macOS using `pyenv`, install Python version 3.12.5, create a virtual environment, and install the `google-generativeai` package.
 
@@ -127,6 +129,66 @@ For future use, you can reactivate the environment by running:
 pyenv activate myenv
 ```
 
+# <a name="dependencies-linux">⚙️ Dependencies Linux</a>
+
+## Atomatic installation for Linux
+
+To automatically set up pyhton env and dependencies run this script:
+
+```bash
+chmod +x dependencies-linux.sh
+./dependencies-linux.sh
+```
+In the dependency script, if there is an installation error, replace the commented installation commands with those corresponding to the correct Linux distribution you are using.
+
+Now you can go 👉 (🦾 [Project setup](#setup))
+
+# <a name="dependencies-windows">⚙️ Dependencies Windows</a>
+
+## Installation for Windows
+
+## 1. Install Python 3.12.5 on Windows
+
+### Step 1: Download Python 3.12.5
+1. Visit the official Python website: [https://www.python.org/downloads/](https://www.python.org/downloads/)
+2. Find and download **Python 3.12.5** for Windows.
+3. Run the installer and make sure to check the box **"Add Python 3.12 to PATH"** before proceeding with the installation.
+
+### Step 2: Verify Installation
+Once Python is installed, open a **Command Prompt (CMD)** window and run the following command to verify the installation:
+
+```bash
+python --version
+```
+You should see output similar to:
+```
+Python 3.12.5
+```
+## 2. Create a Virtual Environment
+### Step 1: Create the Virtual Environment
+In the Command Prompt (CMD) window, navigate to the directory where you want to create your virtual environment.
+Run the following command to create a virtual environment named env:
+```bash
+python -m venv env
+```
+
+### Step 2: Activate the Virtual Environment
+Once the virtual environment is created, activate it with this command:
+
+```bash
+.\env\Scripts\activate
+```
+
+## 3. Install google-generativeai Using pip
+Step 1: Install google-generativeai
+With the virtual environment activated, run the following command to install the required package:
+
+```bash
+pip install google-generativeai
+```
+This will install the necessary library in your virtual environment.
+
+Now you can go 👉 (🦾 [Project setup](#setup))
 
 # <a name="setup">🦾  Project setup</a>
 
