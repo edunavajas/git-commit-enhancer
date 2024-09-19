@@ -284,3 +284,5 @@ git commit -m "your commit message"
 ```
 
 Gemini will process the commit message, improve it, and apply the changes to the commit automatically.
+
+more info here
