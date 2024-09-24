@@ -8,9 +8,9 @@
 
 1. 🤖 [Introduction](#introduction)
 2. ⚙️ [Dependencies installation for Mac Os](#dependencies)
-3  ⚙️ [Dependencies installation for Linux](#dependencies-linux)
-3  ⚙️ [Dependencies installation for Windows](#dependencies-windows)
-3. 🦾 [Project setup](#setup)
+3. ⚙️ [Dependencies installation for Linux](#dependencies-linux)
+4. ⚙️ [Dependencies installation for Windows](#dependencies-windows)
+5. 🦾 [Project setup](#setup)
 
 
 # <a name="introduction">🤖 Automated Git Commit Hook with Gemini Integration</a>
@@ -201,7 +201,11 @@ To use this hook, follow the steps below.
     ```
     GEMINI_API_KEY=your_gemini_api_key_here
     ```
-
+3. Also you have the option to send the diff code to gemini, by default is false, you can change it
+   ```
+    USE_GIT_DIFF = "true"
+    ```
+    
 ## Automatic Setup
 
 To automatically set up the hook for your Git repositories, clone the project and run the following commands:
