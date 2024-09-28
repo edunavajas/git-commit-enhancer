@@ -116,6 +116,7 @@ pyenv activate myenv
 8. Install the google-generativeai Package
 ```bash
 pip install google-generativeai
+pip install python-dotenv
 ```
 
 You now have a Python 3.12.5 virtual environment with the google-generativeai package installed. To deactivate the environment at any point, run:

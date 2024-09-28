@@ -52,5 +52,6 @@ pyenv activate myenv
 
 echo "Installing google-generativeai package..."
 pip install google-generativeai
+pip install python-dotenv
 
 echo "Script completed. The 'google-generativeai' package is installed in the virtual environment 'myenv'."
