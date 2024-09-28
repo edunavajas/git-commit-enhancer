@@ -4,3 +4,5 @@ project_code/.env
 project_code/__pycache__/
 
 .idea/
+
+.env
