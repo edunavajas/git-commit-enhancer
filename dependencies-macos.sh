@@ -35,6 +35,8 @@ pyenv install 3.12.5
 # Set the global Python version to 3.12.5
 pyenv global 3.12.5
 
+brew install pyenv-virtualenv
+
 # Create a virtual environment with Python 3.12.5
 echo "Creating a virtual environment named 'myenv'..."
 pyenv virtualenv 3.12.5 myenv

@@ -103,6 +103,10 @@ pyenv global 3.12.5
 
 6. Create a Virtual Environment
 
+```bash
+brew install pyenv-virtualenv
+```
+
 With Python 3.12.5 installed, create a virtual environment (in this example, we’ll call it myenv):
 ```bash
 pyenv virtualenv 3.12.5 myenv
