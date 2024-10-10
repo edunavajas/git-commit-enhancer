@@ -1,0 +1,44 @@
+#!/bin/bash
+# Commit-msg WINDOWS EXAMPLE. PLEASE IF YOU WANT TO USE REMOVE THE .windows EXTENSION
+
+# Path to your Python script (relative to the hook)
+SCRIPT_PATH="C:\Projects\git-commit-enhancer\Main.py"
+
+# Path to the Python interpreter inside the virtual environment or system Python
+PYTHON_BIN="C:\Users\xxx\env\Scripts\python"
+
+# Get the commit message file (Git passes it as an argument)
+COMMIT_MSG_FILE="$1"
+
+# Path to the log file
+LOG_FILE="/c/tmp\commit-msg-hook.log"
+
+# Check if the log directory exists, if not create it
+LOG_DIR=$(dirname "$LOG_FILE")
+if [ ! -d "$LOG_DIR" ]; then
+    mkdir -p "$LOG_DIR"
+fi
+
+# Create the log file if it doesn't exist
+if [ ! -f "$LOG_FILE" ]; then
+    touch "$LOG_FILE"
+fi
+
+# Log the current step for debugging
+echo "Running commit-msg hook" > "$LOG_FILE"
+echo "Commit message file: $COMMIT_MSG_FILE" >> "$LOG_FILE"
+echo "Using Python binary at: $PYTHON_BIN" >> "$LOG_FILE"
+
+# Log the Python path and run the Python script
+"$PYTHON_BIN" --version >> "$LOG_FILE" 2>&1
+"$PYTHON_BIN" "$SCRIPT_PATH" "$COMMIT_MSG_FILE" >> "$LOG_FILE" 2>&1
+
+# Check the exit status of the Python script
+if [ $? -ne 0 ]; then
+    echo "Python script failed. Aborting commit." >> "$LOG_FILE"
+    exit 1
+fi
+
+# Log the result
+echo "Commit message hook completed." >> "$LOG_FILE"
+exit 0
